@@ -64,7 +64,7 @@ public class RacingTest {
     }
 
     private static Cars run(Racing racing, Rule rule) {
-        Cars cars = rule.cars();
+        Cars cars = new Cars(rule.getCars());
         for (int i = 0; i < rule.getMovingTimes(); i++) {
             racing.moveCars(cars);
         }

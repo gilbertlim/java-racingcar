@@ -15,7 +15,7 @@ public class Controller {
 
         Racing racing = new Racing(new RandomNumberGenerator());
 
-        Cars cars = rule.cars();
+        Cars cars = new Cars(rule.getCars());
         for (int i = 0; i < rule.getMovingTimes(); i++) {
             racing.moveCars(cars);
             showProgress(cars);

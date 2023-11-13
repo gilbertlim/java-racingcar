@@ -3,27 +3,18 @@ package study.step5.domain.dto;
 import java.util.List;
 
 import study.step5.domain.Car;
-import study.step5.domain.Cars;
 import study.step5.domain.exception.RacingException;
 
 
 public class Rule {
 
-    private final Cars cars;
+    private final List<Car> cars;
     private final int movingTimes;
 
     public Rule(List<Car> cars, int movingTimes) {
         validate(cars, movingTimes);
-        this.cars = new Cars(cars);
+        this.cars = cars;
         this.movingTimes = movingTimes;
-    }
-
-    public Cars cars() {
-        return cars;
-    }
-
-    public int getMovingTimes() {
-        return movingTimes;
     }
 
     private void validate(List<Car> cars, int movingTimes) {
@@ -43,4 +34,11 @@ public class Rule {
         return movingTimes >= 1;
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public int getMovingTimes() {
+        return movingTimes;
+    }
 }
